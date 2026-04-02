@@ -1,0 +1,792 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: tinos-regular;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: tinos-bold-italic;
+}
+
+.momo-signature-regular {
+    font-family: "Momo Signature", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.tinos-regular {
+    font-family: "Tinos", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.tinos-bold {
+    font-family: "Tinos", serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.tinos-regular-italic {
+    font-family: "Tinos", serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.tinos-bold-italic {
+    font-family: "Tinos", serif;
+    font-weight: 700;
+    font-style: italic;
+}
+
+html, body {
+    margin: 0;
+    background-color: gold;
+    font-family: Arial, sans-serif;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    min-height: 80vh;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+/* ===== SIGNATURE SECTION ===== */
+#signature {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 16px;
+    width: auto;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+#signatureH2 {
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 32px;
+    color: #1a1a1a;
+    background-color: transparent;
+}
+
+.contact-team {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    width: 100%;
+}
+
+.team-member {
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.team-member:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.signatureH4 {
+    font-family: 'Momo Signature', cursive;
+    font-size: 24px;
+    margin-bottom: 8px;
+    color: #1a1a1a;
+    background-color: transparent;
+}
+
+.signaturep1 {
+    margin-bottom: 12px;
+    font-size: 15px;
+    color: #666;
+    background-color: transparent;
+}
+
+.signaturep2 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #d97706;
+    background-color: transparent;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.signaturep2:hover {
+    color: #dc2626;
+    text-decoration: underline;
+}
+
+/* ===== FORM CONTAINER ===== */
+#form-container {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 16px;
+    width: 450px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    transition: box-shadow 0.3s ease;
+}
+
+#form-container:hover {
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#demo-prompt {
+    text-align: center;
+    background-color: transparent;
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+    color: #1a1a1a;
+}
+
+.form-subtitle {
+    text-align: center;
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 10px;
+    background-color: transparent;
+}
+
+/* ===== FORM GROUPS ===== */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.contactLabel {
+    background-color: transparent;
+    display: block;
+    font-weight: 600;
+    color: #1a1a1a;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.required {
+    color: #dc2626;
+    margin-left: 4px;
+}
+
+/* ===== INPUT FIELDS ===== */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+    width: 100%;
+    padding: 12px 16px;
+    background-color: #f8f9fa;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-family: inherit;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    color: #1a1a1a;
+}
+
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+input[type="tel"]::placeholder,
+textarea::placeholder {
+    color: #999;
+}
+
+/* Focus states for better accessibility */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+textarea:focus {
+    outline: none;
+    border-color: gold;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.1);
+}
+
+/* Error states */
+input[type="text"].error,
+input[type="email"].error,
+input[type="tel"].error,
+textarea.error {
+    border-color: #dc2626;
+    background-color: #fff5f5;
+}
+
+input[type="text"].error:focus,
+input[type="email"].error:focus,
+input[type="tel"].error:focus,
+textarea.error:focus {
+    box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+}
+
+/* Success states */
+input[type="text"].success,
+input[type="email"].success,
+input[type="tel"].success,
+textarea.success {
+    border-color: #10b981;
+    background-color: #f0fdf4;
+}
+
+/* ===== TEXTAREA WRAPPER ===== */
+.textarea-wrapper {
+    position: relative;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 120px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.char-counter {
+    position: absolute;
+    bottom: 8px;
+    right: 12px;
+    font-size: 12px;
+    color: #999;
+    background-color: #ffffff;
+    padding: 2px 6px;
+    border-radius: 4px;
+    pointer-events: none;
+}
+
+/* ===== ERROR TEXT ===== */
+.error-text {
+    color: #dc2626;
+    font-size: 12px;
+    font-weight: 500;
+    display: block;
+    margin-top: 4px;
+    animation: slideDown 0.2s ease;
+    background-color: transparent;
+}
+
+.form-error {
+    padding: 12px 16px;
+    background-color: #fef2f2;
+    border-left: 4px solid #dc2626;
+    border-radius: 6px;
+    color: #991b1b;
+    font-size: 14px;
+    display: none;
+    animation: slideDown 0.3s ease;
+    background-color: #fef2f2;
+}
+
+.form-error[style*="display: block"] {
+    display: block;
+}
+
+/* ===== FORM ACTIONS ===== */
+.form-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.btn-submit,
+.btn-reset {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-submit {
+    flex: 1;
+    background: linear-gradient(135deg, gold 0%, #d97706 100%);
+    color: #000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    font-weight: 700;
+}
+
+.btn-submit:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn-submit:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+.btn-submit:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.btn-text {
+    transition: opacity 0.3s ease;
+}
+
+.btn-loader {
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    font-size: 16px;
+}
+
+.btn-reset {
+    flex: 0.8;
+    background-color: #f3f4f6;
+    color: #1a1a1a;
+    border: 1px solid #d1d5db;
+}
+
+.btn-reset:hover {
+    background-color: #e5e7eb;
+    border-color: #9ca3af;
+    transform: translateY(-1px);
+}
+
+.btn-reset:active {
+    transform: translateY(0);
+}
+
+/* ===== SUCCESS MODAL ===== */
+.success-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.3s ease;
+}
+
+.success-modal.show {
+    display: flex;
+}
+
+.success-content {
+    background-color: white;
+    border-radius: 16px;
+    padding: 48px 32px;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: slideUpScale 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.success-icon {
+    font-size: 64px;
+    color: #10b981;
+    margin-bottom: 20px;
+    animation: bounceIn 0.6s ease 0.1s backwards;
+}
+
+.success-content h3 {
+    font-size: 28px;
+    color: #1a1a1a;
+    margin-bottom: 12px;
+    background-color: transparent;
+}
+
+.success-content p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 24px;
+    line-height: 1.6;
+    background-color: transparent;
+}
+
+.btn-success-close {
+    padding: 12px 32px;
+    background: linear-gradient(135deg, gold 0%, #d97706 100%);
+    color: #000;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-success-close:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUpScale {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+    70% {
+        transform: scale(0.9);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+/* Tablet Responsive */
+@media (max-width: 1024px) {
+    main {
+        gap: 20px;
+        min-height: auto;
+        padding: 20px;
+    }
+
+    #signature {
+        padding: 30px;
+        width: 100%;
+        max-width: 400px;
+    }
+
+    #form-container {
+        width: 100%;
+        max-width: 400px;
+        padding: 30px;
+    }
+
+    #signatureH2 {
+        font-size: 28px;
+    }
+
+    .signatureH4 {
+        font-size: 20px;
+    }
+
+    .signaturep1, .signaturep2 {
+        font-size: 14px;
+    }
+
+    .contactLabel {
+        font-size: 13px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    textarea {
+        padding: 10px 14px;
+        font-size: 14px;
+    }
+
+    .btn-submit, .btn-reset {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+        gap: 15px;
+        min-height: auto;
+        padding: 15px;
+    }
+
+    #signature {
+        padding: 24px;
+        width: 100%;
+        max-width: 100%;
+        border-radius: 12px;
+        gap: 20px;
+    }
+
+    #form-container {
+        padding: 24px;
+        width: 100%;
+        max-width: 100%;
+        border-radius: 12px;
+    }
+
+    #signatureH2 {
+        font-size: 24px;
+        margin-bottom: 8px;
+    }
+
+    .signatureH4 {
+        font-size: 18px;
+        margin-bottom: 6px;
+    }
+
+    .signaturep1 {
+        font-size: 13px;
+        margin-bottom: 8px;
+    }
+
+    .signaturep2 {
+        font-size: 14px;
+    }
+
+    #demo-prompt {
+        font-size: 20px;
+        margin-bottom: 8px;
+    }
+
+    .form-subtitle {
+        font-size: 13px;
+    }
+
+    .contactLabel {
+        font-size: 12px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    textarea {
+        padding: 10px 12px;
+        font-size: 16px; /* Prevents zoom on iOS */
+    }
+
+    textarea {
+        min-height: 100px;
+    }
+
+    .form-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .btn-submit, .btn-reset {
+        padding: 12px 16px;
+        font-size: 14px;
+        width: 100%;
+    }
+
+    .error-text {
+        font-size: 11px;
+    }
+
+    .success-content {
+        padding: 32px 24px;
+        margin: 20px;
+    }
+
+    .success-icon {
+        font-size: 56px;
+        margin-bottom: 16px;
+    }
+
+    .success-content h3 {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .success-content p {
+        font-size: 15px;
+        margin-bottom: 20px;
+    }
+
+    .btn-success-close {
+        width: 100%;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    main {
+        flex-direction: column;
+        gap: 12px;
+        padding: 12px;
+        min-height: auto;
+    }
+
+    #signature {
+        padding: 16px;
+        width: 100%;
+        border-radius: 10px;
+        gap: 15px;
+    }
+
+    #form-container {
+        padding: 16px;
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    #signatureH2 {
+        font-size: 20px;
+        margin-bottom: 6px;
+    }
+
+    .signatureH4 {
+        font-size: 16px;
+        margin-bottom: 4px;
+    }
+
+    .signaturep1 {
+        font-size: 12px;
+        margin-bottom: 6px;
+    }
+
+    .signaturep2 {
+        font-size: 13px;
+    }
+
+    #demo-prompt {
+        font-size: 18px;
+        margin-bottom: 6px;
+    }
+
+    .form-subtitle {
+        font-size: 12px;
+    }
+
+    form {
+        gap: 16px;
+    }
+
+    .form-group {
+        gap: 6px;
+    }
+
+    .contactLabel {
+        font-size: 11px;
+        font-weight: 700;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    textarea {
+        padding: 10px 12px;
+        font-size: 16px;
+    }
+
+    textarea {
+        min-height: 90px;
+    }
+
+    .char-counter {
+        font-size: 11px;
+        bottom: 6px;
+        right: 10px;
+    }
+
+    .form-actions {
+        flex-direction: column;
+        gap: 8px;
+        margin-top: 8px;
+    }
+
+    .btn-submit, .btn-reset {
+        padding: 10px 14px;
+        font-size: 13px;
+        width: 100%;
+    }
+
+    .error-text {
+        font-size: 11px;
+    }
+
+    .form-error {
+        padding: 10px 12px;
+        font-size: 13px;
+    }
+
+    .success-content {
+        padding: 24px 16px;
+        margin: 16px;
+        max-width: 90vw;
+    }
+
+    .success-icon {
+        font-size: 48px;
+        margin-bottom: 12px;
+    }
+
+    .success-content h3 {
+        font-size: 20px;
+        margin-bottom: 8px;
+    }
+
+    .success-content p {
+        font-size: 14px;
+        margin-bottom: 16px;
+    }
+
+    .btn-success-close {
+        width: 100%;
+        padding: 10px 16px;
+    }
+}
+
+/* Accessibility: Focus visible for keyboard navigation */
+*:focus-visible {
+    outline: 2px solid gold;
+    outline-offset: 2px;
+}
+
+/* Reduce motion preference */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

@@ -1,0 +1,135 @@
+---
+title: Customer Portal
+layout: base.html
+page_css: /CSS/Login-page.css
+page_js: /JS/Login-Page.js
+page_description: "JSU Marketing Customer Portal - Access invoices and submit service requests."
+og_title: "Customer Portal - JSU Marketing"
+noindex: true
+---
+<div id="body">
+    <main>
+        <!-- AUTH SECTION -->
+        <div id="auth" class="auth-container">
+            <div class="auth-card">
+                <div class="auth-header">
+                    <h1 id="myH1">Customer Portal</h1>
+                    <p class="auth-subtitle">Access your invoices, website, and submit requests</p>
+                </div>
+
+                <div class="auth-form">
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" placeholder="your@email.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" placeholder="••••••••" required>
+                    </div>
+
+                    <p id="errorP" class="error-message"></p>
+
+                    <button id="loginBtn" class="btn btn-primary">
+                        <i class="fa-solid fa-sign-in-alt"></i> Log In
+                    </button>
+                </div>
+
+                
+            </div>
+        </div>
+
+        <!-- DASHBOARD SECTION -->
+        <div id="dashboard" class="dashboard-container">
+            
+            <!-- Header -->
+            <div class="dashboard-header">
+                <div class="header-content">
+                    <h1><i class="fa-solid fa-gauge-high"></i> Dashboard</h1>
+                    <p>Welcome back! Here's your business overview.</p>
+                </div>
+                <button id="logoutBtn" class="btn btn-secondary">
+                    <i class="fa-solid fa-sign-out-alt"></i> Log Out
+                </button>
+            </div>
+
+            <!-- Grid Layout -->
+            <div class="dashboard-grid">
+
+                <!-- Website Card -->
+                <div class="dashboard-card" id="websiteCard">
+                    <div class="card-header">
+                        <h2><i class="fa-solid fa-globe"></i> Your Website</h2>
+                    </div>
+                    <div id="clientWebsite" class="card-content">
+                        <p class="loading"><i class="fa-solid fa-spinner fa-spin"></i> Loading...</p>
+                    </div>
+                </div>
+
+                <!-- Request Form Card -->
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h2><i class="fa-solid fa-paper-plane"></i> Submit a Request</h2>
+                        <span class="card-badge" id="requestCount">0</span>
+                    </div>
+                    <div class="card-content">
+                        <div class="form-group">
+                            <label for="requestMessage">What do you need?</label>
+                            <textarea 
+                                id="requestMessage" 
+                                placeholder="Describe your request (e.g., website update, new feature, content change...)..."
+                                rows="4"
+                            ></textarea>
+                            <p class="input-hint">Be as specific as possible so we can help you better.</p>
+                        </div>
+                        <button id="submitRequestBtn" class="btn btn-primary">
+                            <i class="fa-solid fa-paper-plane"></i> Send Request
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Social Posts Approval Card (Full Width) -->
+            <div class="dashboard-card card-full-width" id="postsCard">
+                <div class="card-header">
+                    <h2><i class="fa-solid fa-thumbs-up"></i> Posts Awaiting Approval</h2>
+                    <span class="card-badge" id="pendingPostsCount">0</span>
+                </div>
+                <div class="card-content">
+                    <ul id="pendingPostsList" class="posts-list">
+                        <p class="loading"><i class="fa-solid fa-spinner fa-spin"></i> Loading posts...</p>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Invoices Card (Full Width) -->
+            <div class="dashboard-card card-full-width" id="invoicesCard">
+                <div class="card-header">
+                    <h2><i class="fa-solid fa-file-invoice"></i> Invoices</h2>
+                </div>
+                <div class="card-content">
+                    <ul id="invoiceList" class="invoice-list">
+                        <p class="loading"><i class="fa-solid fa-spinner fa-spin"></i> Loading invoices...</p>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Request History Card (Collapsible) -->
+            <div class="dashboard-card card-full-width">
+                <div class="card-header">
+                    <h2><i class="fa-solid fa-history"></i> Request History</h2>
+                    <button id="expandHistoryBtn" class="btn-expand">
+                        <i class="fa-solid fa-chevron-down"></i> View History
+                    </button>
+                </div>
+                <div id="requestHistoryPanel" class="card-content collapsible">
+                    <ul id="requestHistoryList" class="request-history-list">
+                        <p class="loading"><i class="fa-solid fa-spinner fa-spin"></i> Loading requests...</p>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </main>
+</div>

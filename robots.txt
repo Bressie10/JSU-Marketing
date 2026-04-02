@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+Disallow: /Login-Page/
+
+Sitemap: https://jsumarketing.com/sitemap.xml

@@ -1,0 +1,385 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: tinos-bold;
+}
+
+body {
+    background-color: gold;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: tinos-bold-italic;
+}
+
+.momo-signature-regular {
+    font-family: "Momo Signature", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.tinos-regular {
+    font-family: "Tinos", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.tinos-bold {
+    font-family: "Tinos", serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.tinos-regular-italic {
+    font-family: "Tinos", serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.tinos-bold-italic {
+    font-family: "Tinos", serif;
+    font-weight: 700;
+    font-style: italic;
+}
+
+#containerBtn {
+    background-color: white;
+    min-height: 400px;
+    text-align: center;
+    border-radius: 20px;
+    margin: 20px;
+    box-shadow: 4px 4px 5px black;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#h1Box {
+    text-align: center;
+}
+
+#myH1AdminAccess {
+    padding: 20px;
+    font-size: 40px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+#break {
+    margin: 0 auto;
+    width: 80%;
+    height: 2px;
+    background-color: black;
+    border: none;
+}
+
+#hostingerLogo {
+    height: 100px;
+    width: 100px;
+    margin: 15px auto;
+}
+
+#totalForm {
+    display: flex;
+    justify-content: space-around;
+    justify-items: center;
+    align-items: center;
+    height: auto;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+#radioRow, #radioRow1 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.radioBtn {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.radioBtns {
+    font-size: 18px;
+    margin-left: 8px;
+    cursor: pointer;
+    background-color: transparent;
+    padding: 0;
+    border: none;
+}
+
+#btnView {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+#submitBtn {
+    padding: 15px 30px;
+    background-image: linear-gradient(to bottom right, hsl(0, 0%, 0%), gold);
+    background-color: black;
+    color: white;
+    font-size: 18px;
+    border-radius: 20px;
+    box-shadow: 4px 4px 5px black;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#submitBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 6px 6px 8px black;
+}
+
+#errorMessage {
+    margin-top: 10px;
+    color: red;
+    font-weight: bold;
+    min-height: 20px;
+}
+
+#desktopContainer1 {
+    display: block;
+    background-color: white;
+    height: auto;
+    text-align: center;
+    border-radius: 20px;
+    margin: 20px;
+    box-shadow: 4px 4px 5px black;
+    padding: 20px;
+}
+
+#desktopContainer1.hidden {
+    display: none;
+}
+
+#mobileContainer1 {
+    display: none;
+    background-color: white;
+    height: auto;
+    text-align: center;
+    border-radius: 20px;
+    margin: 20px;
+    box-shadow: 4px 4px 5px black;
+    padding: 20px;
+}
+
+#mobileContainer1.active {
+    display: block;
+}
+
+.views {
+    padding: 20px;
+    font-size: 40px;
+    margin: 0;
+}
+
+#videoBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Videos {
+    height: 500px;
+    margin: 10px;
+    margin-bottom: 20px;
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+
+
+/* Tablet Responsive */
+@media (max-width: 1024px) {
+    #containerBtn {
+        padding: 15px;
+        margin: 15px;
+        min-height: auto;
+    }
+
+    #myH1AdminAccess {
+        font-size: 28px;
+        padding: 15px;
+    }
+
+    #break {
+        width: 60%;
+    }
+
+    #hostingerLogo {
+        height: 80px;
+        width: 80px;
+    }
+
+    #totalForm {
+        gap: 15px;
+    }
+
+    .radioBtns {
+        font-size: 16px;
+    }
+
+    #submitBtn {
+        padding: 12px 25px;
+        font-size: 16px;
+        max-width: 250px;
+    }
+
+    #desktopContainer1, #mobileContainer1 {
+        margin: 15px;
+        border-radius: 15px;
+        padding: 15px;
+    }
+
+    .views {
+        font-size: 28px;
+        padding: 15px;
+    }
+
+    .Videos {
+        height: 350px;
+    }
+
+    
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    #containerBtn {
+        padding: 12px;
+        margin: 10px;
+        border-radius: 15px;
+    }
+
+    #myH1AdminAccess {
+        font-size: 22px;
+        padding: 12px;
+    }
+
+    #break {
+        width: 50%;
+        height: 2px;
+    }
+
+    #hostingerLogo {
+        height: 70px;
+        width: 70px;
+        margin: 12px auto;
+    }
+
+    #totalForm {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    #radioRow, #radioRow1 {
+        gap: 8px;
+    }
+
+    .radioBtns {
+        font-size: 14px;
+    }
+
+    #submitBtn {
+        padding: 10px 20px;
+        font-size: 14px;
+        max-width: 200px;
+        width: 100%;
+    }
+
+    #desktopContainer1, #mobileContainer1 {
+        margin: 10px;
+        border-radius: 12px;
+        padding: 12px;
+    }
+
+    .views {
+        font-size: 20px;
+        padding: 12px;
+    }
+
+    .Videos {
+        height: 250px;
+        margin: 8px;
+    }
+
+    #videoBox {
+        max-width: 100%;
+    }
+
+    
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    #containerBtn {
+        padding: 10px;
+        margin: 8px;
+        border-radius: 12px;
+    }
+
+    #myH1AdminAccess {
+        font-size: 18px;
+        padding: 10px;
+    }
+
+    #break {
+        width: 40%;
+        height: 2px;
+    }
+
+    #hostingerLogo {
+        height: 60px;
+        width: 60px;
+        margin: 10px auto;
+    }
+
+    #totalForm {
+        gap: 10px;
+    }
+
+    #radioRow, #radioRow1 {
+        gap: 6px;
+    }
+
+    .radioBtn {
+        width: 18px;
+        height: 18px;
+    }
+
+    .radioBtns {
+        font-size: 12px;
+    }
+
+    #submitBtn {
+        padding: 8px 16px;
+        font-size: 12px;
+        max-width: 100%;
+    }
+
+    #desktopContainer1, #mobileContainer1 {
+        margin: 8px;
+        border-radius: 10px;
+        padding: 10px;
+    }
+
+    .views {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    .Videos {
+        height: 200px;
+        margin: 6px;
+    }
+}

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Google tag -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7TG81TYTKP"></script>
+    <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-7TG81TYTKP');
+</script>
+
+    <!-- ===== BASIC META TAGS ===== -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="JSU Marketing">
+    <meta name="robots" content="{% if noindex %}noindex{% else %}index{% endif %}, follow">
+    <meta name="theme-color" content="#FFD700">
+    
+    <!-- ===== PAGE TITLE & DESCRIPTION ===== -->
+    <title>{{ title }} | JSU Marketing</title>
+    <meta name="description" content="{% if page_description %}{{ page_description }}{% else %}JSU Marketing - Professional website design, social media management & digital marketing for small businesses in Ireland.{% endif %}">
+    <meta name="keywords" content="{% if page_keywords %}{{ page_keywords }}{% else %}website design Ireland, social media management, digital marketing, marketing agency Clare{% endif %}">
+    
+    <!-- ===== CANONICAL URL ===== -->
+    <link rel="canonical" href="https://jsumarketing.com{% if page.url == '/' %}/{% else %}{{ page.url }}{% endif %}">
+    
+    <!-- ===== OPEN GRAPH / SOCIAL SHARING ===== -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_IE">
+    <meta property="og:site_name" content="JSU Marketing">
+    <meta property="og:title" content="{% if og_title %}{{ og_title }}{% else %}{{ title }} | JSU Marketing{% endif %}">
+    <meta property="og:description" content="{% if og_description %}{{ og_description }}{% else %}{{ page_description | default: 'Professional digital marketing services for Irish businesses' }}{% endif %}">
+    <meta property="og:url" content="https://jsumarketing.com{% if page.url == '/' %}/{% else %}{{ page.url }}{% endif %}">
+    <meta property="og:image" content="{% if og_image %}{{ og_image }}{% else %}https://jsumarketing.com/Photos/Logo.jpg{% endif %}">
+    <meta property="og:image:alt" content="JSU Marketing - Website Design & Digital Marketing">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- ===== TWITTER CARD ===== -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:creator" content="@JSUMarketing">
+    <meta name="twitter:title" content="{% if og_title %}{{ og_title }}{% else %}{{ title }}{% endif %}">
+    <meta name="twitter:description" content="{% if og_description %}{{ og_description }}{% else %}Professional digital marketing services{% endif %}">
+    <meta name="twitter:image" content="{% if og_image %}{{ og_image }}{% else %}https://jsumarketing.com/Photos/Logo.jpg{% endif %}">
+
+    <!-- ===== GEO / LOCAL SEO ===== -->
+    <meta name="geo.region" content="IE-CE">
+    <meta name="geo.placename" content="Clare, Ireland">
+    <meta name="geo.position" content="52.8409;-8.9824">
+    <meta name="ICBM" content="52.8409, -8.9824">
+
+    <!-- ===== FAVICON ===== -->
+    <link rel="icon" href="/Photos/Logo.jpg" type="image/x-icon">
+
+    <!-- ===== STYLESHEETS ===== -->
+    <link rel="stylesheet" href="/CSS/header_style.css">
+    {% if page_css %}
+    <link rel="stylesheet" href="{{ page_css }}">
+    {% endif %}
+
+    <!-- ===== ORGANIZATION SCHEMA (On all pages) ===== -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "JSU Marketing",
+      "url": "https://jsumarketing.com",
+      "logo": "https://jsumarketing.com/Photos/Logo.jpg",
+      "description": "Digital marketing agency specializing in website design and social media management for Irish businesses",
+      "sameAs": [
+        "https://www.facebook.com/jsumarketing",
+        "https://www.instagram.com/jsu_marketing_team/?hl=en",
+        "https://www.tiktok.com/@jsumarketing"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+353-87-944-9977",
+        "contactType": "Customer Service",
+        "email": "jsumarketingteam@gmail.com"
+      }
+    }
+    </script>
+
+    <!-- ===== PAGE-SPECIFIC SCHEMA (Contact page only) ===== -->
+    {% if is_contact_page %}
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "@id": "https://jsumarketing.com",
+      "name": "JSU Marketing",
+      "image": "https://jsumarketing.com/Photos/Logo.jpg",
+      "description": "Digital marketing agency specializing in website design, social media management, and online presence for Irish businesses",
+      "url": "https://jsumarketing.com",
+      "telephone": "+353-87-944-9977",
+      "email": "jsumarketingteam@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Carlow",
+        "addressRegion": "Leinster",
+        "postalCode": "R95",
+        "addressCountry": "IE"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "IE"
+      },
+      "sameAs": [
+        "https://www.facebook.com/jsumarketing",
+        "https://www.instagram.com/jsu_marketing_team/?hl=en",
+        "https://www.tiktok.com/@jsumarketing"
+      ],
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "09:00",
+        "closes": "18:00"
+      }
+    }
+    </script>
+    {% endif %}
+
+    <!-- ===== SERVICE SCHEMA (Services page only) ===== -->
+    {% if is_services_page %}
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Website Design & Social Media Management",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "JSU Marketing",
+        "url": "https://jsumarketing.com"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "IE"
+      }
+    }
+    </script>
+    {% endif %}
+
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="/" class="logo">JSU Marketing</a>
+            
+            <input type="checkbox" id="nav-check">
+            
+            <label for="nav-check" class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="/">Home</a></li>
+                    
+                    <li class="has-dropdowns">
+                        <a href="#">Services</a>
+                        <ul class="dropdown">
+                            <li><a href="/Services/">Our Services</a></li>
+                            <li><a href="/Past-Projects/">Past Projects</a></li>
+                            <li><a href="/Testimonials/">Testimonials</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li><a href="/Team/">Meet Our Team</a></li>
+                    
+                    <li class="has-dropdowns">
+                        <a href="#">Account</a>
+                        <ul class="dropdown">
+                            <li><a href="/Login-Page/">Customer Portal</a></li>
+                            <li><a href="/Admin-Access/">Admin Access</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="has-dropdowns">
+                        <a href="#">Get Started</a>
+                        <ul class="dropdown">
+                            <li><a href="/Get-a-qoute/">Recommended Packages</a></li>
+                            <li><a href="/Contact/">Contact Us</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    {{ content }}
+
+    <footer>
+        <div class="footer-blocks" id="footer-block1">
+            <h4 id="Contact-us">Contact Us:</h4>
+            <div id="social-icons">
+                <a class="footer-links"  href="https://www.tiktok.com/search?q=jsumarketing&t=1765832445259"><i id="tiktok" class="fa-brands fa-tiktok fa-2xl"></i></a>
+                <a  class="footer-links"  href="https://www.instagram.com/jsu_marketing_team/?hl=en"><i id="instagram" class="fa-brands fa-instagram fa-2xl"></i></a> 
+            </div>
+        </div>
+
+        <div class="footer-blocks" id="footer-block2">
+            <h5 id="footer-header">JSU MARKETING</h5>
+        </div>
+     
+        <div class="footer-blocks" id="footer-block3">
+            <h6 id="demo">Get a free demo today.</h6>
+            <a id="email-link" href="mailto:jsumarketingteam@gmail.com">
+                jsumarketingteam@gmail.com
+            </a>
+        </div>
+    </footer>
+
+    <div id="Copyright-box">
+        <p id="Copyright">Copyright © 2026 JSU Marketing</p>
+    </div>
+
+    <!-- DROPDOWN MENU SCRIPT -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const dropdownParents = document.querySelectorAll('.has-dropdowns');
+
+            dropdownParents.forEach(parent => {
+                const link = parent.querySelector('a');
+                
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const isActive = parent.classList.contains('active');
+                    dropdownParents.forEach(p => p.classList.remove('active'));
+                    if (!isActive) {
+                        parent.classList.add('active');
+                    }
+                    e.stopPropagation();
+                });
+            });
+
+            document.addEventListener('click', function() {
+                dropdownParents.forEach(p => p.classList.remove('active'));
+            });
+        });
+    </script>
+
+    <!-- EXTERNAL SCRIPTS -->
+    <script src="https://kit.fontawesome.com/7af9aca289.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <!-- PAGE-SPECIFIC SCRIPT -->
+    {% if page_js %}
+    <script src="{{ page_js }}"></script>
+    {% endif %}
+
+</body>
+</html>

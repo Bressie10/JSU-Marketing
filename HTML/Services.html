@@ -1,0 +1,302 @@
+---
+title: Our Services
+layout: base.html
+page_description: "JSU Marketing Services: Custom website design, WordPress development, SEO & professional social media management for Irish businesses."
+page_keywords: "website design services Ireland, WordPress development, SEO services, social media management, digital marketing services"
+og_title: "Our Services - JSU Marketing | Website Design & Social Media"
+og_description: "Complete digital services: website creation, WordPress, SEO & social media management."
+is_services_page: true
+---
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: tinos-regular;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: tinos-bold-italic;
+}
+
+.momo-signature-regular {
+    font-family: "Momo Signature", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.tinos-regular {
+    font-family: "Tinos", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.tinos-bold {
+    font-family: "Tinos", serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.tinos-regular-italic {
+    font-family: "Tinos", serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.tinos-bold-italic {
+    font-family: "Tinos", serif;
+    font-weight: 700;
+    font-style: italic;
+}
+
+body {
+    background-color: gold;
+}
+
+main {
+    background-color: gold;
+    padding-bottom: 40px;
+}
+
+/* Hero Section */
+#servicesHero {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../Photos/Meet-our-Team.jpeg);
+    background-size: cover;
+    background-position: center;
+    height: 350px;
+    margin: 20px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    box-shadow: 4px 4px 5px black;
+}
+
+#servicesHero h1 {
+    font-size: 60px;
+    margin-bottom: 15px;
+    background-color: transparent;
+}
+
+#servicesHero p {
+    font-size: 24px;
+    background-color: transparent;
+}
+
+/* Services Grid Container */
+#servicesContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 25px;
+    padding: 40px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Service Cards */
+.serviceCard {
+    background-color: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 4px 4px 5px black;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.serviceCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 8px 8px 10px black;
+}
+
+.serviceIcon {
+    font-size: 60px;
+    color: black;
+    margin-bottom: 20px;
+    background-color: transparent;
+}
+
+.serviceCard h3 {
+    font-size: 28px;
+    color: black;
+    margin-bottom: 15px;
+    background-color: white;
+}
+
+.serviceCard p {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    background-color: white;
+}
+
+.serviceFeatures {
+    list-style: none;
+    background-color: white;
+}
+
+.serviceFeatures li {
+    font-size: 15px;
+    color: #555;
+    margin-bottom: 10px;
+    padding-left: 0;
+    background-color: white;
+}
+
+/* Call to Action Section */
+#callToAction {
+    background-color: white;
+    border-radius: 20px;
+    padding: 50px 40px;
+    margin: 40px 20px;
+    text-align: center;
+    box-shadow: 4px 4px 5px black;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#callToAction h2 {
+    font-size: 42px;
+    color: black;
+    margin-bottom: 15px;
+    background-color: white;
+}
+
+#callToAction p {
+    font-size: 20px;
+    color: #666;
+    margin-bottom: 30px;
+    background-color: white;
+}
+
+.ctaButton {
+    display: inline-block;
+    padding: 15px 40px;
+    background-image: linear-gradient(to bottom right, hsl(0, 0%, 0%), gold);
+    background-color: black;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 20px;
+    text-decoration: none;
+    box-shadow: 4px 4px 5px black;
+    transition: all 0.3s ease;
+}
+
+.ctaButton:hover {
+    transform: scale(1.05);
+    box-shadow: 6px 6px 8px black;
+}
+
+/* Mobile Responsive */
+@media (max-width: 900px) {
+    #servicesHero {
+        height: 250px;
+        margin: 15px;
+    }
+
+    #servicesHero h1 {
+        font-size: 36px;
+        margin-bottom: 10px;
+    }
+
+    #servicesHero p {
+        font-size: 16px;
+    }
+
+    #servicesContainer {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 20px 10px;
+    }
+
+    .serviceCard {
+        padding: 20px;
+    }
+
+    .serviceCard h3 {
+        font-size: 24px;
+    }
+
+    .serviceCard p {
+        font-size: 15px;
+    }
+
+    #callToAction {
+        padding: 30px 20px;
+        margin: 20px 15px;
+    }
+
+    #callToAction h2 {
+        font-size: 28px;
+    }
+
+    #callToAction p {
+        font-size: 16px;
+    }
+
+    .ctaButton {
+        padding: 12px 30px;
+        font-size: 16px;
+        width: 90%;
+    }
+}
+</style>
+
+<main>
+    <div id="servicesHero">
+        <h1>Our Services</h1>
+        <p>Comprehensive marketing solutions tailored to elevate your brand</p>
+    </div>
+
+    <section id="servicesContainer">
+        <!-- Website Creation Service -->
+        <div class="serviceCard">
+            <div class="serviceIcon">
+                <i class="fa-solid fa-globe"></i>
+            </div>
+            <h3>Website Creation & Development</h3>
+            <p>Modern, easy-to-navigate websites are designed to clearly represent each client’s brand and services. Websites are tailored to individual business needs and built to current web standards.</p>
+            <ul class="serviceFeatures">
+                <li>✓ Wordpress</li>
+                <li>✓ HTML</li>
+                <li>✓ Fully Custom</li>
+                <li>✓ SEO</li>
+                <li>✓ Analytics & Performance Reporting</li>
+            </ul>
+        </div>
+
+        <!-- Social Media Service -->
+        <div class="serviceCard">
+            <div class="serviceIcon">
+                <i class="fa-solid fa-share-nodes"></i>
+            </div>
+            <h3>Social Media Management</h3>
+            <p>Clients’ social media accounts are managed through the creation of relevant, consistent content that reflects their brand and engages their target audience. Regular posting helps businesses stay visible and maintain an active online presence.</p>
+            <ul class="serviceFeatures">
+                <li>✓ Content Creation</li>
+                <li>✓ Video Reels & Posts</li>
+                <li>✓ Community Management</li>
+                <li>✓ Strategy & Planning</li>
+                <li>✓ Analytics & Reporting</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="callToAction">
+        <h2>Ready to Transform Your Online Presence?</h2>
+        <p>Let's work together to create marketing that delivers real results</p>
+        <a href="/Contact/" class="ctaButton">Get Started Today</a>
+    </section>
+</main>

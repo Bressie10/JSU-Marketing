@@ -1,0 +1,308 @@
+html, body {
+    margin: 0px;
+    padding: 0px;
+    background-color: gold;
+    font-family: Arial, sans-serif;
+}
+
+* {
+    font-family: tinos-regular;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: tinos-bold-italic;
+}
+
+.momo-signature-regular {
+    font-family: "Momo Signature", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.tinos-regular {
+    font-family: "Tinos", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.tinos-bold {
+    font-family: "Tinos", serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.tinos-regular-italic {
+    font-family: "Tinos", serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.tinos-bold-italic {
+    font-family: "Tinos", serif;
+    font-weight: 700;
+    font-style: italic;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 40px 20px;
+    gap: 20px;
+}
+
+form, #priceBox {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 4px 4px 5px black;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.options {
+    font-size: 16px;
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    background-color: white;
+    border-radius: 6px;
+    border: 2px solid #ddd;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+.options:focus {
+    outline: none;
+    border-color: black;
+    background-color: #f5f5f5;
+}
+
+.suboption {
+    width: 100%;
+    padding: 8px;
+    background-color: white;
+    border: none;
+    box-sizing: border-box;
+}
+
+.btns {
+    background-color: gold;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    width: 100%;
+    align-self: center;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    max-width: 300px;
+}
+
+.btns:hover {
+    background-color: #f0c800;
+    transform: translateY(-2px);
+    box-shadow: 4px 4px 8px black;
+}
+
+#priceBox {
+    display: none;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px;
+    height: auto;
+}
+
+#priceBox.active {
+    display: flex;
+}
+
+#priceBoxH {
+    font-size: 25px;
+    margin: 0px;
+    padding: 0px;
+}
+
+#priceBoxHeader {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0;
+}
+
+#listItem1, #listItem2 {
+    margin-bottom: 15px;
+    font-size: 18px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-left: 4px solid gold;
+    border-radius: 4px;
+}
+
+#businessSizeForm {
+    display: none;
+}
+
+#businessSizeForm.active {
+    display: flex;
+}
+
+#businessSizeForm.active > label {
+    margin-bottom: 15px;
+}
+
+/* Tablet Responsive */
+@media (max-width: 1024px) {
+    main {
+        padding: 30px 20px;
+    }
+
+    form, #priceBox {
+        padding: 25px;
+        max-width: 100%;
+        width: 90%;
+    }
+
+    form label {
+        font-size: 18px;
+    }
+
+    .options {
+        font-size: 15px;
+        padding: 8px;
+        margin-bottom: 12px;
+    }
+
+    .btns {
+        font-size: 16px;
+        padding: 10px 18px;
+        max-width: 250px;
+    }
+
+    #priceBoxH {
+        font-size: 22px;
+    }
+
+    #listItem1, #listItem2 {
+        font-size: 16px;
+        margin-bottom: 12px;
+    }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    main {
+        padding: 20px 15px;
+        gap: 15px;
+    }
+
+    form, #priceBox {
+        padding: 20px;
+        width: 100%;
+        max-width: 100%;
+        border-radius: 15px;
+    }
+
+    form label {
+        font-size: 16px;
+        margin-bottom: 8px;
+    }
+
+    .options {
+        font-size: 14px;
+        padding: 8px;
+        margin-bottom: 12px;
+    }
+
+    .btns {
+        font-size: 14px;
+        padding: 10px 16px;
+        max-width: 100%;
+        width: 100%;
+    }
+
+    #priceBoxH {
+        font-size: 18px;
+    }
+
+    #listItem1, #listItem2 {
+        font-size: 14px;
+        padding: 8px;
+        margin-bottom: 10px;
+    }
+
+    #businessSizeForm > label {
+        font-size: 14px;
+        margin-bottom: 12px;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    main {
+        padding: 15px 10px;
+        gap: 12px;
+        min-height: auto;
+    }
+
+    form, #priceBox {
+        padding: 15px;
+        width: 100%;
+        border-radius: 12px;
+        gap: 12px;
+    }
+
+    form label {
+        font-size: 14px;
+        margin-bottom: 6px;
+    }
+
+    .options {
+        font-size: 13px;
+        padding: 8px;
+        margin-bottom: 10px;
+    }
+
+    .btns {
+        font-size: 13px;
+        padding: 8px 14px;
+        width: 100%;
+    }
+
+    #priceBoxH {
+        font-size: 16px;
+    }
+
+    #listItem1, #listItem2 {
+        font-size: 12px;
+        padding: 8px;
+        margin-bottom: 8px;
+    }
+
+    #businessSizeForm > label {
+        font-size: 12px;
+        margin-bottom: 10px;
+    }
+}

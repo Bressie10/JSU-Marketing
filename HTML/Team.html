@@ -1,0 +1,502 @@
+---
+title: Meet Our Team
+layout: base.html
+page_description: "Meet the JSU Marketing team: Jack Hayes, Sean Daly, and Ultan Breslin. Digital marketing experts based in County Clare, Ireland."
+page_keywords: "digital marketing team Ireland, web developers Ireland, social media managers, marketing agency team"
+og_title: "Meet Our Team - JSU Marketing | Digital Marketing Experts"
+og_description: "Jack Hayes, Sean Daly & Ultan Breslin: Creative experts dedicated to your success."
+---
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: tinos-regular;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: tinos-bold-italic;
+}
+
+.momo-signature-regular {
+    font-family: "Momo Signature", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.tinos-regular {
+    font-family: "Tinos", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.tinos-bold {
+    font-family: "Tinos", serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.tinos-regular-italic {
+    font-family: "Tinos", serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.tinos-bold-italic {
+    font-family: "Tinos", serif;
+    font-weight: 700;
+    font-style: italic;
+}
+
+body {
+    background-color: rgb(255, 217, 0);
+}
+
+main {
+    background-color: gold;
+    padding-bottom: 40px;
+}
+
+/* Hero Section */
+#teamHero {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../Photos/Website\ Header.webp);
+    background-size: cover;
+    background-position: center;
+    height: 350px;
+    margin: 20px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    box-shadow: 4px 4px 5px black;
+}
+
+#teamHero h1 {
+    font-size: 60px;
+    margin-bottom: 15px;
+    background-color: transparent;
+}
+
+#teamHero p {
+    font-size: 24px;
+    background-color: transparent;
+}
+
+/* Team Intro Section */
+#teamIntro {
+    display: flex;
+    justify-content: center;
+    padding: 20px 20px;
+}
+
+#introBox {
+    background-color: white;
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 900px;
+    box-shadow: 4px 4px 5px black;
+    text-align: center;
+}
+
+#introBox h2 {
+    font-size: 40px;
+    color: black;
+    margin-bottom: 20px;
+    background-color: white;
+}
+
+#introBox p {
+    font-size: 18px;
+    color: #333;
+    line-height: 1.8;
+    background-color: white;
+}
+
+/* Team Container */
+#teamContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    padding: 40px 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Team Member Card */
+.teamMember {
+    background-color: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 4px 4px 5px black;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.teamMember:hover {
+    transform: translateY(-8px);
+    box-shadow: 8px 8px 12px black;
+}
+.teamMember a{
+    color: #333;
+    text-decoration: none;
+}
+.memberImage {
+    height: 300px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-color: #e0e0e0;
+}
+
+#member1 {
+    background: linear-gradient(135deg, #000 0%, gold 100%);
+}
+
+#member2 {
+    background: linear-gradient(135deg, #666 0%, #000 100%);
+}
+
+#member3 {
+    background: linear-gradient(135deg, #333 0%, gold 100%);
+}
+
+.memberInfo {
+    padding: 30px;
+    background-color: white;
+}
+
+.memberInfo h3 {
+    font-size: 28px;
+    color: black;
+    margin-bottom: 5px;
+    background-color: white;
+}
+
+.memberRole {
+    font-size: 16px;
+    color: gold;
+    font-weight: bold;
+    margin-bottom: 15px;
+    background-color: white;
+}
+
+.memberBio {
+    font-size: 15px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    background-color: white;
+}
+
+.memberContact {
+    font-size: 14px;
+    color: #333;
+    font-weight: bold;
+    background-color: white;
+    margin-top: 10px;
+}
+
+/* Why Choose Us Section */
+#whyChooseUs {
+    background-color: white;
+    border-radius: 20px;
+    padding: 50px 40px;
+    margin: 40px 20px;
+    box-shadow: 4px 4px 5px black;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.memberImage {
+    height: 300px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.memberImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+#whyChooseUs h2 {
+    text-align: center;
+    font-size: 42px;
+    color: black;
+    margin-bottom: 40px;
+    background-color: white;
+}
+
+#reasonsContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.reason {
+    text-align: center;
+    background-color: white;
+}
+
+.reasonIcon {
+    font-size: 50px;
+    color: black;
+    margin-bottom: 15px;
+    background-color: transparent;
+}
+
+.reason h4 {
+    font-size: 22px;
+    color: black;
+    margin-bottom: 10px;
+    background-color: white;
+}
+
+.reason p {
+    font-size: 15px;
+    color: #666;
+    line-height: 1.6;
+    background-color: white;
+}
+
+/* Team CTA Section */
+#teamCTA {
+    background-color: white;
+    border-radius: 20px;
+    padding: 50px 40px;
+    margin: 40px 20px;
+    text-align: center;
+    box-shadow: 4px 4px 5px black;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#teamCTA h2 {
+    font-size: 42px;
+    color: black;
+    margin-bottom: 15px;
+    background-color: white;
+}
+
+#teamCTA p {
+    font-size: 20px;
+    color: #666;
+    margin-bottom: 30px;
+    background-color: white;
+}
+
+.ctaButton {
+    display: inline-block;
+    padding: 15px 40px;
+    background-image: linear-gradient(to bottom right, hsl(0, 0%, 0%), gold);
+    background-color: black;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 20px;
+    text-decoration: none;
+    box-shadow: 4px 4px 5px black;
+    transition: all 0.3s ease;
+}
+
+.ctaButton:hover {
+    transform: scale(1.05);
+    box-shadow: 6px 6px 8px black;
+}
+
+/* Mobile Responsive */
+@media (max-width: 900px) {
+    #teamHero {
+        height: 250px;
+        margin: 15px;
+    }
+
+    #teamHero h1 {
+        font-size: 36px;
+        margin-bottom: 10px;
+    }
+
+    #teamHero p {
+        font-size: 16px;
+    }
+
+    #introBox {
+        padding: 25px;
+    }
+
+    #introBox h2 {
+        font-size: 28px;
+    }
+
+    #introBox p {
+        font-size: 16px;
+    }
+
+    #teamContainer {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 20px 10px;
+    }
+
+    .memberImage {
+        height: 250px;
+    }
+
+    .memberInfo {
+        padding: 20px;
+    }
+
+    .memberInfo h3 {
+        font-size: 24px;
+    }
+
+    .memberBio {
+        font-size: 14px;
+    }
+
+    #whyChooseUs {
+        padding: 30px 20px;
+        margin: 20px 15px;
+    }
+
+    #whyChooseUs h2 {
+        font-size: 28px;
+        margin-bottom: 25px;
+    }
+
+    #reasonsContainer {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .reasonIcon {
+        font-size: 40px;
+    }
+
+    .reason h4 {
+        font-size: 18px;
+    }
+
+    #teamCTA {
+        padding: 30px 20px;
+        margin: 20px 15px;
+    }
+
+    #teamCTA h2 {
+        font-size: 28px;
+    }
+
+    #teamCTA p {
+        font-size: 16px;
+    }
+
+    .ctaButton {
+        padding: 12px 30px;
+        font-size: 16px;
+        width: 90%;
+    }
+}
+</style>
+
+<main>
+    <div id="teamHero">
+        <h1>Meet Our Team</h1>
+        <p>Creative minds and strategic thinkers dedicated to your success</p>
+    </div>
+
+    <section id="teamIntro">
+        <div id="introBox">
+            <h2>Who We Are</h2>
+            <p>JSU Marketing Consultants is powered by a driven team of three young entrepreneurs who combine creativity, technical skill, and a deep understanding of modern digital marketing. As the next generation of marketers, we help small businesses compete online through affordable, high-quality solutions.</p>
+        </div>
+    </section>
+
+    <section id="teamContainer">
+<div class="teamMember">
+            <div class="memberImage" id="member1">
+                <img src="../Photos/Jack-Hayes.JPG" alt="Jack Hayes - Head of Sales at JSU Marketing, website creation and client relations specialist">
+            </div>
+            <div class="memberInfo">
+                <h3>Jack Hayes</h3>
+                <p class="memberRole">Head of Sales</p>
+                <p class="memberBio">Jack is responsible for sales, client meetings, and organising projects with customers. He works closely with clients to understand their goals and ensure each project meets their expectations. Jack also builds websites and plays an important role in business decision-making. In addition, he acts as a second opinion on the social media side of the business, supporting strategy and content planning.</p>
+                <p class="memberContact"><a href="tel:0879449977">📞 (087) 944 9977</a></p>
+            </div>
+        </div>
+
+        <!-- Team Member 2 -->
+        <div class="teamMember">
+            <div class="memberImage" id="member2">
+                <img src="../Photos/Sean-Daly.jpg" alt="Sean Daly - Head of Social Media Management at JSU Marketing, content creation and social media strategy expert">
+            </div>
+            <div class="memberInfo">
+                <h3>Sean Daly</h3>
+                <p class="memberRole">Head of Social Media Management</p>
+                <p class="memberBio">Sean runs the social media side of JSU Marketing Consultants. He manages both the company’s own social media platforms and those of our clients. Sean focuses on creating engaging content, maintaining consistent branding, and helping businesses connect with both younger and older audiences through modern social media trends.</p>
+                <p class="memberContact"><a href="tel:0873792059">📞 (087) 379 2059</a></p>
+            </div>
+        </div>
+
+        <!-- Team Member 3 -->
+        <div class="teamMember">
+            <div class="memberImage" id="member3">
+                <img src="../Photos/Ultan-Breslin.jpeg" alt="Ultan Breslin - Head Web Developer at JSU Marketing, WordPress and HTML web development specialist">
+            </div>
+            <div class="memberInfo">
+                <h3>Ultan Breslin</h3>
+                <p class="memberRole">Head Website Developer</p>
+                <p class="memberBio">Ultan is the lead website developer and builder at JSU Marketing Consultants. He specialises in building websites using platforms such as Hostinger and WordPress, and has recently expanded his skills into coding websites using HTML, CSS, and JavaScript. Ultan ensures all websites are modern, functional, and built to a high technical standard.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="whyChooseUs">
+        <h2>Why Choose Our Team</h2>
+        <div id="reasonsContainer">
+            <div class="reason">
+                <div class="reasonIcon">
+                    <i class="fa-solid fa-brain" style="color: rgb(255, 217, 0);"></i>
+                </div>
+                <h4>Fresh Ideas</h4>
+                <p>Fresh energy for business ready to move forward.</p>
+            </div>
+
+            <div class="reason">
+                <div class="reasonIcon">
+                    <i class="fa-solid fa-handshake" style="color: rgb(255, 217, 0);"></i>
+                </div>
+                <h4>Real Support</h4>
+                <p>Real People, Real Advice and Real Results.</p>
+            </div>
+
+            <div class="reason">
+                <div class="reasonIcon">
+                    <i class="fa-solid fa-chart-line" style="color: rgb(255, 217, 0);"></i>
+                </div>
+                <h4>Local Growth</h4>
+                <p>From local beginnings, to lasting digital growth.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="teamCTA">
+        <h2>Ready to Work With Us?</h2>
+        <p>Let's collaborate and create something extraordinary for your brand</p>
+        <a href="/Contact/" class="ctaButton">Get in Touch</a>
+    </section>
+</main>

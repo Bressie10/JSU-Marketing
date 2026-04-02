@@ -1,0 +1,295 @@
+body {
+    background-color: gold;
+}
+
+.website {
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 4px 4px 5px black;
+    margin: 20px;
+}
+
+.websiteH {
+    text-align: center;
+    padding: 10px;
+    font-size: 40px;
+}
+
+.button {
+    text-decoration: none;
+    color: white;
+    padding: 20px 40px;
+    background-image: linear-gradient(to bottom right, hsl(0, 0%, 0%), gold);
+    background-color: black;
+    color: white;
+    font-size: 18px;
+    border-radius: 20px;
+    box-shadow: 4px 4px 5px black;
+    margin-bottom: 20px;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.button:hover {
+    transform: translateY(-2px);
+    box-shadow: 6px 6px 8px black;
+}
+
+.containerg {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+    background-color: white;
+}
+
+.instagram-media {
+    width: 100%;
+    height: 100%;
+}
+
+.box {
+    height: 500px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+
+
+.box h3 {
+    font-size: 40px;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 2;
+}
+
+.box a {
+    position: relative;
+    z-index: 2;
+}
+
+.bottomDiv {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+#box1 {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../Photos/CraicFitness.webp) ;
+    background-size: cover;
+}
+
+#box2 {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../Photos/Dormer.png);
+    background-size: cover;
+}
+
+#box3 {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../Photos/CraicFitness.webp) ;
+    background-size: cover;
+}
+
+#box4 {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../Photos/clarehire.png);
+    background-size: cover;
+}
+
+.hidden {
+    display: none ;
+}
+
+video.reel {
+    height: 100%;
+    width: auto;
+    box-shadow: 4px 4px 5px black;
+}
+
+#viewMore, #viewLess {
+    border: none;
+    background-color: white;
+    color: blue;
+    font-size: medium;
+    text-decoration: underline;
+    font-size: 17.5px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px 20px;
+    margin: 10px;
+    transition: all 0.3s ease;
+}
+
+#viewMore:hover, #viewLess:hover {
+    background-color: gold;
+    color: black;
+}
+
+#viewLess {
+    display: none;
+}
+
+.contactBtn {
+    text-align: center;
+    margin: 10px;
+    width: 350px;
+    background-image: linear-gradient(to bottom right, hsl(0, 0%, 0%), gold);
+    background-color: black;
+    padding: 15px;
+    font-size: 20px;
+    color: white;
+    border-radius: 20px;
+    box-shadow: 4px 4px 5px black;
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.contactBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 6px 6px 8px black;
+}
+
+/* Tablet Responsive */
+@media (max-width: 1024px) {
+    .containerg {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .box {
+        height: 350px;
+    }
+
+    .box h3 {
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+
+    .websiteH {
+        font-size: 30px;
+    }
+
+    .contactBtn {
+        width: 300px;
+        font-size: 16px;
+        padding: 12px;
+    }
+
+    .website {
+        margin: 15px;
+        border-radius: 15px;
+    }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .websiteH {
+        font-size: 24px;
+        padding: 12px;
+    }
+
+    .containerg {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        padding: 12px;
+    }
+
+    .box {
+        height: 250px;
+        border-radius: 15px;
+    }
+
+    .box h3 {
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+
+    .button {
+        padding: 12px 20px;
+        font-size: 14px;
+        width: 90%;
+    }
+
+    .contactBtn {
+        width: 90%;
+        max-width: 250px;
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .website {
+        margin: 10px;
+        border-radius: 12px;
+    }
+
+    #viewMore, #viewLess {
+        font-size: 14px;
+        padding: 8px 16px;
+        margin: 8px;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    .websiteH {
+        font-size: 18px;
+        padding: 10px;
+    }
+
+    .containerg {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .box {
+        height: 200px;
+        border-radius: 12px;
+    }
+
+    .box h3 {
+        font-size: 16px;
+        margin-bottom: 12px;
+    }
+
+    .button {
+        padding: 10px 16px;
+        font-size: 12px;
+        width: 100%;
+    }
+
+    .contactBtn {
+        width: 100%;
+        font-size: 12px;
+        padding: 8px;
+        margin: 8px 0;
+    }
+
+    .website {
+        margin: 8px;
+        border-radius: 10px;
+    }
+
+    #viewMore, #viewLess {
+        font-size: 12px;
+        padding: 6px 12px;
+        margin: 6px;
+    }
+
+    video.reel {
+        width: 100%;
+        height: auto;
+    }
+}

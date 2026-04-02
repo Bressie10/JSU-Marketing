@@ -1,0 +1,326 @@
+---
+title: Contact
+layout: base.html
+page_css: /CSS/style2.css
+page_description: "Contact JSU Marketing for free consultation. Jack Hayes (087 944 9977) | Sean Daly (087 379 2059). Website design & social media services."
+page_keywords: "contact marketing agency Ireland, web design quote, social media consultation, digital marketing contact"
+og_title: "Contact JSU Marketing - Get Your Free Quote"
+og_description: "Get in touch with JSU Marketing. Free consultation for website design and social media management."
+is_contact_page: true
+---
+<main>
+
+  <div id="signature">
+    <h1 id="signatureH2">Get in Contact Today</h1>
+
+    <div class="contact-team">
+      <div class="team-member">
+        <h4 class="signatureH4">Jack Hayes</h4>
+        <p class="signaturep1">Website Creation / Outreach</p>
+        <a href="tel:0879449977" class="signaturep2">📞 (087) 944 9977</a>
+      </div>
+      
+      <div class="team-member">
+        <h4 class="signatureH4">Sean Daly</h4>
+        <p class="signaturep1">Social Media / Outreach</p>
+        <a href="tel:0873792059" class="signaturep2">📞 (087) 379 2059</a>
+      </div>
+
+      <div class="team-member">
+        <h4 class="signatureH4">Ultan Breslin</h4>
+        <p class="signaturep1">Website Creation</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="form-container">
+    <form id="form" novalidate>
+      <h2 id="demo-prompt">Get a Demo Today</h2>
+      <p class="form-subtitle">Fill out the form below and we'll be in touch within 24 hours</p>
+
+      <div class="form-group">
+        <label for="full-name" class="contactLabel">
+          Full Name <span class="required" aria-label="required">*</span>
+        </label>
+        <input
+          type="text"
+          id="full-name"
+          name="full_name"
+          placeholder="Jack Hayes"
+          required
+          aria-describedby="full-name-error"
+          autocomplete="name"
+          minlength="2"
+          maxlength="100"
+        >
+        <span id="full-name-error" class="error-text" role="alert"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="email" class="contactLabel">
+          Email <span class="required" aria-label="required">*</span>
+        </label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="example@gmail.com"
+          required
+          aria-describedby="email-error"
+          autocomplete="email"
+        >
+        <span id="email-error" class="error-text" role="alert"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="phone" class="contactLabel">
+          Phone <span class="required" aria-label="required">*</span>
+        </label>
+        <input
+          type="tel"
+          id="phone"
+          name="phone"
+          placeholder="089 226 6552"
+          required
+          aria-describedby="phone-error"
+          autocomplete="tel"
+          pattern="[0-9\s\-\+\(\)]+"
+        >
+        <span id="phone-error" class="error-text" role="alert"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="message" class="contactLabel">
+          Business Description <span class="required" aria-label="required">*</span>
+        </label>
+        <div class="textarea-wrapper">
+          <textarea
+            id="message"
+            name="message"
+            rows="4"
+            placeholder="Tell us about your business, what services you need, and any specific goals..."
+            required
+            aria-describedby="message-error message-count"
+            minlength="20"
+            maxlength="1000"
+          ></textarea>
+          <div id="message-count" class="char-counter" aria-live="polite">0 / 1000</div>
+        </div>
+        <span id="message-error" class="error-text" role="alert"></span>
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" id="submit-btn" class="btn-submit" aria-busy="false">
+          <span class="btn-text">Send Message</span>
+          <span class="btn-loader" aria-hidden="true">
+            <i class="fa-solid fa-spinner fa-spin"></i>
+          </span>
+        </button>
+        <button type="reset" id="reset-button" class="btn-reset">Clear Form</button>
+      </div>
+
+      <div id="form-error" class="form-error" role="alert"></div>
+    </form>
+  </div>
+  
+  <div id="success-modal" class="success-modal" role="alert" aria-hidden="true">
+    <div class="success-content">
+      <div class="success-icon">
+        <i class="fa-solid fa-check-circle"></i>
+      </div>
+      <h3>Thank You!</h3>
+      <p>Your message has been sent successfully. We'll be in touch within 24 hours.</p>
+      <button class="btn-success-close" onclick="closeSuccessModal()">Got it</button>
+    </div>
+  </div>
+
+</main>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const form = document.getElementById('form');
+  const submitBtn = document.getElementById('submit-btn');
+  const successModal = document.getElementById('success-modal');
+  const messageField = document.getElementById('message');
+  const messageCount = document.getElementById('message-count');
+  const formError = document.getElementById('form-error');
+
+  // Character counter
+  messageField.addEventListener('input', function() {
+    const count = this.value.length;
+    messageCount.textContent = `${count} / 1000`;
+    messageCount.style.color = count > 900 ? '#ff6b6b' : count > 750 ? '#ffa500' : '#999';
+  });
+
+  // Validation rules
+  const validationRules = {
+    full_name: {
+      validate: (value) => {
+        value = value.trim();
+        if (!value) return 'Full name is required';
+        if (value.length < 2) return 'Name must be at least 2 characters';
+        if (value.length > 100) return 'Name must be less than 100 characters';
+        if (!/^[a-zA-Z\s\-'\.]+$/.test(value)) return 'Name can only contain letters, spaces, hyphens, apostrophes, and periods';
+        return '';
+      },
+      field: document.getElementById('full-name'),
+      errorElement: document.getElementById('full-name-error')
+    },
+    email: {
+      validate: (value) => {
+        value = value.trim();
+        if (!value) return 'Email is required';
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(value)) return 'Please enter a valid email address';
+        return '';
+      },
+      field: document.getElementById('email'),
+      errorElement: document.getElementById('email-error')
+    },
+    phone: {
+      validate: (value) => {
+        value = value.trim();
+        if (!value) return 'Phone number is required';
+        const phoneRegex = /^[\d\s\-\+\(\)]{7,}$/;
+        if (!phoneRegex.test(value)) return 'Please enter a valid phone number';
+        return '';
+      },
+      field: document.getElementById('phone'),
+      errorElement: document.getElementById('phone-error')
+    },
+    message: {
+      validate: (value) => {
+        value = value.trim();
+        if (!value) return 'Business description is required';
+        if (value.length < 20) return 'Description must be at least 20 characters';
+        if (value.length > 1000) return 'Description must be less than 1000 characters';
+        return '';
+      },
+      field: document.getElementById('message'),
+      errorElement: document.getElementById('message-error')
+    }
+  };
+
+  // Blur validation
+  Object.keys(validationRules).forEach(fieldName => {
+    const rule = validationRules[fieldName];
+    rule.field.addEventListener('blur', function() {
+      validateField(fieldName, this.value);
+    });
+
+    rule.field.addEventListener('input', function() {
+      if (this.value.trim() && rule.errorElement) {
+        rule.errorElement.textContent = '';
+        rule.field.classList.remove('error');
+      }
+    });
+  });
+
+  // Validate single field
+  function validateField(fieldName, value) {
+    const rule = validationRules[fieldName];
+    if (!rule || !rule.errorElement) return false;
+    
+    const error = rule.validate(value);
+    if (error) {
+      rule.errorElement.textContent = error;
+      rule.field.classList.add('error');
+      return false;
+    } else {
+      rule.errorElement.textContent = '';
+      rule.field.classList.remove('error');
+      return true;
+    }
+  }
+
+  // Validate all fields
+  function validateForm() {
+    let isValid = true;
+    formError.textContent = '';
+
+    Object.keys(validationRules).forEach(fieldName => {
+      const rule = validationRules[fieldName];
+      if (!validateField(fieldName, rule.field.value)) {
+        isValid = false;
+      }
+    });
+
+    return isValid;
+  }
+
+  // Form submission
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    formError.textContent = '';
+
+    if (!validateForm()) {
+      formError.textContent = 'Please fix the errors above and try again.';
+      submitBtn.focus();
+      return;
+    }
+
+    submitBtn.disabled = true;
+    submitBtn.setAttribute('aria-busy', 'true');
+    const btnText = submitBtn.querySelector('.btn-text');
+    const btnLoader = submitBtn.querySelector('.btn-loader');
+    btnText.style.opacity = '0';
+    btnLoader.style.opacity = '1';
+
+    try {
+      const formData = new FormData(form);
+      formData.append('form_type', 'contact_form');
+
+      const response = await fetch('/FormReplies.php', {
+        method: 'POST',
+        body: formData
+      });
+
+      const result = await response.text();
+
+      if (response.ok && result === 'success') {
+        showSuccessModal();
+        form.reset();
+        messageCount.textContent = '0 / 1000';
+
+        Object.keys(validationRules).forEach(fieldName => {
+          validationRules[fieldName].field.classList.remove('error');
+          if (validationRules[fieldName].errorElement) {
+            validationRules[fieldName].errorElement.textContent = '';
+          }
+        });
+      } else {
+        throw new Error('Server error: ' + result);
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      formError.textContent = 'Something went wrong. Please try again or contact us directly.';
+      formError.style.display = 'block';
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.setAttribute('aria-busy', 'false');
+      btnText.style.opacity = '1';
+      btnLoader.style.opacity = '0';
+    }
+  });
+
+  // Success modal
+  window.showSuccessModal = function() {
+    successModal.setAttribute('aria-hidden', 'false');
+    successModal.classList.add('show');
+  };
+
+  window.closeSuccessModal = function() {
+    successModal.classList.remove('show');
+    setTimeout(() => {
+      successModal.setAttribute('aria-hidden', 'true');
+    }, 300);
+  };
+
+  // Escape to close modal
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && successModal.classList.contains('show')) {
+      closeSuccessModal();
+    }
+  });
+});
+</script>
