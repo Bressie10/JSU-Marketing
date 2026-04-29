@@ -51,9 +51,9 @@ body {
 
 /* Hero Box */
 #box1 {
-    background-image: url(/Photos/Hero\ Image.jpeg);
+    background-image: url(/Photos/JSU-Marketing-Hero.jpg);
     background-size: cover;
-    background-position: center;
+    background-position: center 20%;
     height: 500px;
     margin: 20px;
 

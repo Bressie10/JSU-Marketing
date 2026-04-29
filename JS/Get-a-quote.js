@@ -171,6 +171,13 @@ const sizeToPackage = {
     Franchise: "Scale"
 };
 
+if (!window.supabaseClient) {
+    window.supabaseClient = supabase.createClient(
+        "https://zluprfqjvlelcvoeqpnx.supabase.co",
+        "sb_publishable_0ldJX2nH9zngplwZKU6AKQ_pobyL6sI"
+    );
+}
+
 const businessOptions = document.getElementById("businessOptions");
 const BusinessTypeBtn = document.getElementById("BusinessTypeBtn");
 const businessSizeLabel = document.getElementById("businessSizeLabel");
@@ -184,6 +191,9 @@ const packageNameEl = document.getElementById("packageName");
 const websiteFeaturesList = document.getElementById("websiteFeatures");
 const socialFeaturesList = document.getElementById("socialFeatures");
 const inquireBtn = document.getElementById("inquireBtn");
+const leadName = document.getElementById("leadName");
+const leadEmail = document.getElementById("leadEmail");
+const leadStatus = document.getElementById("leadStatus");
 
 BusinessTypeBtn.addEventListener("click", () => {
     if (!businessName.value.trim()) {
@@ -222,11 +232,84 @@ BusinessSizeBtn.addEventListener("click", () => {
     priceBox.style.display = "flex";
 });
 
-inquireBtn.onclick = function () {
-    const email = "jsumarketingteam@gmail.com";
-    const subject = "Business Inquiry";
-    const websiteList = Array.from(websiteFeaturesList.querySelectorAll("li")).map(li => li.textContent).join(", ");
-    const socialList = Array.from(socialFeaturesList.querySelectorAll("li")).map(li => li.textContent).join(", ");
-    const body = `I would like to inquire about the ${packageNameEl.textContent} for ${businessName.value}.\n\nWebsite: ${websiteList}\n\nSocial Media: ${socialList}\n\nFurther details:`;
-    window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-};
+function showLeadError(msg) {
+    leadStatus.textContent = msg;
+    leadStatus.className = "lead-error";
+}
+
+inquireBtn.addEventListener("click", async () => {
+    const name = leadName.value.trim();
+    const email = leadEmail.value.trim();
+
+    if (!name) {
+        showLeadError("Please enter your name.");
+        leadName.focus();
+        return;
+    }
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        showLeadError("Please enter a valid email address.");
+        leadEmail.focus();
+        return;
+    }
+
+    inquireBtn.disabled = true;
+    inquireBtn.textContent = "Sending...";
+    leadStatus.textContent = "";
+    leadStatus.className = "";
+
+    const websiteFeats = Array.from(websiteFeaturesList.querySelectorAll("li")).map(li => li.textContent);
+    const socialFeats = Array.from(socialFeaturesList.querySelectorAll("li")).map(li => li.textContent);
+    const pkgName = packageNameEl.textContent;
+    const bizName = businessName.value.trim();
+    const bizType = businessOptions.value;
+    const bizSize = buisnessSizeOptions.value;
+
+    try {
+        const { error: dbError } = await window.supabaseClient
+            .from("leads")
+            .insert({
+                name,
+                email,
+                business_name: bizName,
+                business_type: bizType,
+                business_size: bizSize,
+                package_name: pkgName,
+                website_features: websiteFeats,
+                social_features: socialFeats
+            });
+
+        if (dbError) {
+            showLeadError("Something went wrong saving your details. Please try again.");
+            inquireBtn.disabled = false;
+            inquireBtn.textContent = "Get My Quote";
+            return;
+        }
+
+        try {
+            const formBody = new URLSearchParams({
+                form_type: "quote_lead",
+                name,
+                email,
+                business_name: bizName,
+                business_type: bizType,
+                business_size: bizSize,
+                package_name: pkgName,
+                website_features: JSON.stringify(websiteFeats),
+                social_features: JSON.stringify(socialFeats)
+            });
+            const phpRes = await fetch("/FormReplies.php", { method: "POST", body: formBody });
+            const phpText = await phpRes.text();
+            console.log("[quote_lead] PHP status:", phpRes.status, "response:", phpText);
+        } catch (e) {
+            console.warn("[quote_lead] fetch error:", e);
+        }
+
+        leadStatus.textContent = "Thanks! Check your inbox for your package details — we'll be in touch shortly.";
+        leadStatus.className = "lead-success";
+        inquireBtn.textContent = "Sent!";
+    } catch (e) {
+        showLeadError("Something went wrong. Please try again.");
+        inquireBtn.disabled = false;
+        inquireBtn.textContent = "Get My Quote";
+    }
+});
