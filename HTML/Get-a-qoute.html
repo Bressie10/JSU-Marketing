@@ -9,21 +9,36 @@ og_title: "Get a Free Quote - JSU Marketing | Website & Social Media Pricing"
 og_description: "Calculate your free quote for website design and social media management."
 ---
     <main>
-        <h1 id="quoteHeading">Get a Free Quote</h1>
         <!-- BUSINESS NAME & TYPE FORM -->
         <form id="businessTypesForm" onsubmit="return false;">
+            <h1 id="quoteHeading">Get a Free Quote</h1>
             <label for="businessName">Name of your Business</label>
             <input class="options" type="text" id="businessName" name="businessName" required>
 
             <label for="businessOptions">Select Your Business Type:</label>
             <select class="options" name="businessTypes" id="businessOptions">
-                <option class="suboption" id="Resturant">Restaurant/Cafe</option>
-                <option class="suboption" id="Landscaping">Landscaping</option>
-                <option class="suboption" id="Retail">Retail</option>
-                <option class="suboption" id="Plant">Plant and Tool Hire</option>
-                <option class="suboption" id="Hairdresser">Hairdresser & Beautician</option>
-                <option class="suboption" id="Mechanic">Mechanic</option>
-                <option class="suboption" id="Dentistry">Dentistry</option>
+                <option class="suboption">Restaurant/Cafe</option>
+                <option class="suboption">Landscaping</option>
+                <option class="suboption">Retail</option>
+                <option class="suboption">Plant and Tool Hire</option>
+                <option class="suboption">Hairdresser & Beautician</option>
+                <option class="suboption">Mechanic</option>
+                <option class="suboption">Dentistry</option>
+                <option class="suboption">Gym & Fitness</option>
+                <option class="suboption">Accountancy & Finance</option>
+                <option class="suboption">Real Estate</option>
+                <option class="suboption">Construction</option>
+                <option class="suboption">Photography & Videography</option>
+                <option class="suboption">Legal Services</option>
+                <option class="suboption">Cleaning Services</option>
+                <option class="suboption">Childcare & Creche</option>
+                <option class="suboption">Hotel & Accommodation</option>
+                <option class="suboption">Veterinary</option>
+                <option class="suboption">Pharmacy</option>
+                <option class="suboption">Event Planning</option>
+                <option class="suboption">Personal Training</option>
+                <option class="suboption">Trades (Plumber/Electrician)</option>
+                <option class="suboption">IT Services</option>
             </select>
 
             <button class="btns" id="BusinessTypeBtn" type="submit">Submit</button>
@@ -47,11 +62,15 @@ og_description: "Calculate your free quote for website design and social media m
 
         <!-- PRICE BOX -->
         <div id="priceBox">
-            <h4 id="priceBoxH">Our recommended package:</h4>
-            <ul id="priceBoxHeader">
-                <li id="listItem1"></li>
-                <li id="listItem2"></li>
-            </ul>
+            <h3 id="packageName"></h3>
+            <details class="featureAccordion">
+                <summary>Website</summary>
+                <ul id="websiteFeatures"></ul>
+            </details>
+            <details class="featureAccordion">
+                <summary>Social Media</summary>
+                <ul id="socialFeatures"></ul>
+            </details>
             <button class="btns" id="inquireBtn">Inquire</button>
         </div>
     </main>
