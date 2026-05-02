@@ -371,22 +371,7 @@ $email_body = "<!DOCTYPE html>
 </body>
 </html>";
 
-// Important: Use a proper From address (should be from your domain)
-$domain = $_SERVER['www.jsumarketing.com'] ?? $_SERVER['SERVER_NAME'] ?? 'jsumarketing.com';
-$from_email = "noreply@" . $domain;
-
-// Headers to improve deliverability
-$headers = "MIME-Version: 1.0\r\n";
-$headers .= "Content-Type: text/html; charset=UTF-8\r\n";
-$headers .= "From: " . $from_email . "\r\n";
-$headers .= "Reply-To: " . htmlspecialchars($email) . "\r\n";
-$headers .= "Return-Path: " . htmlspecialchars($email) . "\r\n";
-$headers .= "X-Mailer: JSU Marketing Form\r\n";
-$headers .= "X-Priority: 3\r\n";
-$headers .= "X-MSMail-Priority: Normal\r\n";
-
-// Send email
-$mail_sent = mail($to, $subject, $email_body, $headers);
+$mail_sent = send_via_resend($to, $subject, $email_body, $email);
 
 if (!$mail_sent) {
     http_response_code(500);
@@ -415,17 +400,17 @@ $user_body = "<!DOCTYPE html>
         </div>
         <div class='content'>
             <p>Hi " . htmlspecialchars($full_name) . ",</p>
-            
+
             <p>Thank you for reaching out to JSU Marketing! We've received your message and really appreciate your interest in our services.</p>
-            
+
             <p>Our team will review your inquiry and get back to you within 24 hours. We look forward to discussing how we can help grow your business!</p>
-            
+
             <div class='contact-info'>
                 <strong>Quick Contact:</strong><br>
                 Jack Hayes: (087) 944 9977<br>
                 Sean Daly: (087) 379 2059
             </div>
-            
+
             <p>Best regards,<br><strong>The JSU Marketing Team</strong></p>
         </div>
         <div class='footer'>
@@ -435,14 +420,7 @@ $user_body = "<!DOCTYPE html>
 </body>
 </html>";
 
-$user_headers = "MIME-Version: 1.0\r\n";
-$user_headers .= "Content-Type: text/html; charset=UTF-8\r\n";
-$user_headers .= "From: " . $from_email . "\r\n";
-$user_headers .= "Reply-To: " . $to . "\r\n";
-$user_headers .= "X-Mailer: JSU Marketing Form\r\n";
-
-// Send confirmation (non-critical)
-@mail($email, $user_subject, $user_body, $user_headers);
+send_via_resend($email, $user_subject, $user_body, $to);
 
 http_response_code(200);
 echo "success";
