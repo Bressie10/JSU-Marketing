@@ -31,7 +31,10 @@ function send_via_resend($to, $subject, $html, $reply_to = null) {
     $response = curl_exec($ch);
     $status   = curl_getinfo($ch, CURLINFO_HTTP_CODE);
     curl_close($ch);
-    return $status === 200 || $status === 201;
+    if ($status !== 200 && $status !== 201) {
+        return "resend_error:$status:$response";
+    }
+    return true;
 }
 
 if ($form_type === 'new_request') {
@@ -90,9 +93,9 @@ if ($form_type === 'new_request') {
 
     $sent = send_via_resend($to, $subject, $email_body, $client_email ?: null);
 
-    if (!$sent) {
+    if ($sent !== true) {
         http_response_code(500);
-        echo "mail_failed";
+        echo is_string($sent) ? $sent : "mail_failed";
         exit;
     }
 
@@ -180,9 +183,9 @@ if ($form_type === 'post_review') {
 
     $sent = send_via_resend($to, $subject, $email_body);
 
-    if (!$sent) {
+    if ($sent !== true) {
         http_response_code(500);
-        echo "mail_failed";
+        echo is_string($sent) ? $sent : "mail_failed";
         exit;
     }
 
@@ -296,8 +299,8 @@ if ($form_type === 'quote_lead') {
 
     $lead_sent = send_via_resend($lead_email, $lead_subject, $lead_body, "jsumarketingteam@gmail.com");
 
-    http_response_code($lead_sent ? 200 : 500);
-    echo $lead_sent ? "success" : "mail_failed";
+    http_response_code($lead_sent === true ? 200 : 500);
+    echo $lead_sent === true ? "success" : (is_string($lead_sent) ? $lead_sent : "mail_failed");
     exit;
 }
 
@@ -373,9 +376,9 @@ $email_body = "<!DOCTYPE html>
 
 $mail_sent = send_via_resend($to, $subject, $email_body, $email);
 
-if (!$mail_sent) {
+if ($mail_sent !== true) {
     http_response_code(500);
-    echo "error";
+    echo is_string($mail_sent) ? $mail_sent : "error";
     exit;
 }
 
