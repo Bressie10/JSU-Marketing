@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] != "POST") {
 $form_type = isset($_POST['form_type']) ? trim($_POST['form_type']) : '';
 
 function send_via_resend($to, $subject, $html, $reply_to = null) {
-    $api_key = 're_fmaxR1EW_KoL3dg41x5Yn6HRaCmqL68Kk';
+    $api_key = 're_feeQjuGy_P9XybB1VEHxZPbY8ZmSQgXu6';
     $payload = [
         'from'    => 'JSU Marketing <noreply@jsumarketing.com>',
         'to'      => [$to],

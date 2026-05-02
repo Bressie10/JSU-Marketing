@@ -11,7 +11,7 @@
 
 $SUPABASE_URL     = 'https://zluprfqjvlelcvoeqpnx.supabase.co';
 $SERVICE_ROLE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpsdXByZnFqdmxlbGN2b2VxcG54Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc2ODExMzQxNCwiZXhwIjoyMDgzNjg5NDE0fQ.eVeZMYiz4E3oUeCpoRvwZtPC5ISLAMc5Fb-V1QumG1U';
-$RESEND_KEY       = 're_fmaxR1EW_KoL3dg41x5Yn6HRaCmqL68Kk';
+$RESEND_KEY       = 're_feeQjuGy_P9XybB1VEHxZPbY8ZmSQgXu6';
 $LOG_FILE         = __DIR__ . '/followup-log.txt';
 
 function cron_log(string $msg): void {
